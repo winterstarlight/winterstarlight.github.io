@@ -1,2 +1,2 @@
-# winterstarlight.github.io
-这是我的个人主页
+# Welcome to my personal homepage.
+[Click to enter](https://github.com/winterstarlight)
