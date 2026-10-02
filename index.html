@@ -1,18 +1,28 @@
 ```html
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Winter Starlight</title>
 
-    <meta name="description"
-          content="Winter Starlight — Physics · Astrophysics · SYSU → THU">
+    <meta
+        name="description"
+        content="Winter Starlight — Physics · Astrophysics · SYSU → THU"
+    >
+
 
     <style>
+
         /* =========================================================
-           基础设置
+           GLOBAL
         ========================================================= */
 
         * {
@@ -24,363 +34,463 @@
         }
 
         body {
+
             margin: 0;
-            background: #050812;
+
+            background: #040711;
+
             color: #e8edf7;
+
             font-family:
                 "Segoe UI",
                 "Microsoft YaHei",
                 "PingFang SC",
                 sans-serif;
+
             overflow-x: hidden;
         }
 
         a {
+
             color: inherit;
+
             text-decoration: none;
         }
 
 
         /* =========================================================
-           星空背景
+           STARFIELD
         ========================================================= */
 
         #stars {
+
             position: fixed;
+
             inset: 0;
+
             width: 100%;
             height: 100%;
+
             z-index: -3;
+
             background:
+
                 radial-gradient(
-                    ellipse at 50% 20%,
-                    rgba(48, 68, 120, 0.18),
-                    transparent 55%
+                    ellipse at 50% 18%,
+                    rgba(56, 76, 135, 0.15),
+                    transparent 52%
                 ),
-                #050812;
+
+                #040711;
         }
 
+
         .nebula {
+
             position: fixed;
+
             inset: -20%;
+
             z-index: -2;
+
             pointer-events: none;
 
             background:
+
                 radial-gradient(
-                    ellipse at 25% 35%,
-                    rgba(54, 83, 150, 0.10),
-                    transparent 40%
+                    ellipse at 25% 30%,
+                    rgba(70, 90, 150, 0.08),
+                    transparent 42%
                 ),
+
                 radial-gradient(
-                    ellipse at 75% 65%,
-                    rgba(92, 62, 120, 0.08),
-                    transparent 40%
+                    ellipse at 75% 70%,
+                    rgba(95, 70, 125, 0.06),
+                    transparent 42%
                 );
 
-            filter: blur(30px);
+            filter: blur(40px);
         }
 
 
         /* =========================================================
-           导航栏
+           NAVIGATION
         ========================================================= */
 
         nav {
+
             position: fixed;
+
             top: 0;
             left: 0;
+
             width: 100%;
 
             padding: 22px 6vw;
 
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             z-index: 10;
 
-            background: rgba(5, 8, 18, 0.45);
+            background: rgba(4, 7, 17, 0.42);
+
             backdrop-filter: blur(12px);
 
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom:
+                1px solid rgba(255,255,255,0.045);
         }
+
 
         .nav-logo {
-            font-size: 15px;
-            letter-spacing: 3px;
-            color: #dce6ff;
+
+            font-size: 14px;
+
+            letter-spacing: 4px;
+
+            color: #dce5f8;
         }
+
 
         .nav-links {
+
             display: flex;
-            gap: 28px;
-            font-size: 12px;
-            letter-spacing: 1.5px;
-            color: #8e99b3;
+
+            gap: 25px;
+
+            font-size: 11px;
+
+            letter-spacing: 1.8px;
+
+            color: #77839e;
         }
+
 
         .nav-links a {
-            transition: color 0.3s ease;
+
+            transition:
+                color 0.3s ease;
         }
 
+
         .nav-links a:hover {
+
             color: #ffffff;
         }
 
 
         /* =========================================================
-           首页 Hero
+           HERO
         ========================================================= */
 
         .hero {
+
             min-height: 100vh;
 
             display: flex;
+
             flex-direction: column;
+
             justify-content: center;
+
             align-items: center;
 
             text-align: center;
 
-            padding: 120px 20px 80px;
+            padding:
+                120px 20px 80px;
         }
+
 
         .hero-star {
-            font-size: 22px;
-            color: #d9e5ff;
 
-            margin-bottom: 30px;
+            font-size: 18px;
 
-            animation: pulse 4s ease-in-out infinite;
+            color: #dce6ff;
+
+            margin-bottom: 28px;
+
+            animation:
+                pulse 5s ease-in-out infinite;
         }
+
 
         .hero h1 {
+
             margin: 0;
 
-            font-size: clamp(48px, 9vw, 100px);
-            font-weight: 300;
-            letter-spacing: 7px;
+            font-size:
+                clamp(48px, 7vw, 82px);
 
-            color: #f3f6ff;
+            font-weight: 300;
+
+            letter-spacing: 6px;
+
+            color: #f0f3fb;
 
             text-shadow:
-                0 0 25px rgba(180, 205, 255, 0.18);
+                0 0 30px
+                rgba(180,205,255,0.15);
         }
+
 
         .hero-subtitle {
-            margin-top: 24px;
 
-            font-size: clamp(14px, 2vw, 18px);
+            margin-top: 25px;
+
+            font-size:
+                clamp(13px, 1.7vw, 17px);
+
             letter-spacing: 5px;
 
-            color: #8995b0;
+            color: #8490ac;
         }
+
 
         .hero-line {
-            width: 80px;
+
+            width: 70px;
+
             height: 1px;
 
-            margin: 35px auto;
+            margin: 32px auto;
 
-            background: rgba(220,230,255,0.45);
+            background:
+                rgba(215,225,250,0.45);
         }
+
 
         .hero-path {
+
             font-size: 15px;
-            letter-spacing: 4px;
-            color: #c5cee2;
+
+            letter-spacing: 5px;
+
+            color: #c4cee3;
         }
 
+
         .hero-path span {
-            color: #7785a4;
+
+            color: #687692;
+
             margin: 0 12px;
         }
 
-        .hero-note {
-            margin-top: 35px;
 
-            max-width: 550px;
+        .hero-note {
+
+            margin-top: 32px;
+
+            max-width: 520px;
 
             font-size: 14px;
+
             line-height: 2;
 
-            color: #6f7a95;
+            color: #68748e;
         }
 
+
         .scroll-hint {
+
             position: absolute;
+
             bottom: 30px;
 
-            font-size: 10px;
+            font-size: 9px;
+
             letter-spacing: 4px;
 
-            color: #58627a;
+            color: #535e76;
 
-            animation: float 3s ease-in-out infinite;
+            animation:
+                float 3s ease-in-out infinite;
         }
 
 
         /* =========================================================
-           通用 Section
+           SECTIONS
         ========================================================= */
 
         section {
-            width: min(900px, 88%);
+
+            width:
+                min(1000px, 88%);
+
             margin: 0 auto;
 
-            padding: 120px 0;
+            padding:
+                120px 0;
         }
 
+
         .section-title {
+
             margin-bottom: 55px;
         }
 
+
         .section-number {
-            font-size: 11px;
-            letter-spacing: 3px;
-            color: #66718c;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            color: #5d6982;
         }
+
 
         .section-title h2 {
+
             margin: 10px 0 0;
 
-            font-size: 30px;
+            font-size: 31px;
+
             font-weight: 300;
+
             letter-spacing: 3px;
 
-            color: #e9eef9;
+            color: #e6ebf5;
         }
 
+
         .section-title h2::after {
+
             content: "";
+
             display: block;
 
-            width: 35px;
+            width: 38px;
+
             height: 1px;
 
             margin-top: 18px;
 
-            background: rgba(220,230,255,0.45);
+            background:
+                rgba(215,225,250,0.4);
         }
 
 
         /* =========================================================
-           About
+           ABOUT
         ========================================================= */
 
         .about-text {
-            max-width: 700px;
 
-            font-size: 16px;
-            line-height: 2.2;
+            max-width: 780px;
 
-            color: #9aa5bd;
+            font-size: 15px;
+
+            line-height: 2.25;
+
+            color: #929db6;
         }
 
+
+        .about-text p {
+
+            margin:
+                0 0 26px;
+        }
+
+
         .about-text strong {
-            color: #dce4f5;
+
+            color: #dbe3f3;
+
             font-weight: 400;
         }
 
+
         .quote {
-            margin-top: 45px;
+
+            margin-top: 40px;
+
             padding-left: 20px;
 
-            border-left: 1px solid rgba(220,230,255,0.25);
+            border-left:
+                1px solid
+                rgba(215,225,250,0.25);
 
-            color: #68738c;
+            color: #69758e;
+
             font-size: 14px;
+
             line-height: 2;
+
             font-style: italic;
         }
 
 
         /* =========================================================
-           Research
+           RESEARCH
         ========================================================= */
 
         .research-grid {
+
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, 1fr);
 
             gap: 18px;
         }
 
+
         .research-card {
+
             padding: 30px;
 
-            border: 1px solid rgba(255,255,255,0.07);
-            background: rgba(255,255,255,0.025);
+            border:
+                1px solid
+                rgba(255,255,255,0.065);
+
+            background:
+                rgba(255,255,255,0.018);
 
             transition:
-                transform 0.3s ease,
-                border-color 0.3s ease,
-                background 0.3s ease;
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                background 0.35s ease;
         }
+
 
         .research-card:hover {
-            transform: translateY(-4px);
 
-            border-color: rgba(180,200,240,0.2);
+            transform:
+                translateY(-4px);
 
-            background: rgba(255,255,255,0.045);
+            border-color:
+                rgba(190,210,250,0.22);
+
+            background:
+                rgba(255,255,255,0.035);
         }
+
 
         .research-card h3 {
-            margin: 0 0 12px;
+
+            margin:
+                0 0 14px;
 
             font-size: 16px;
+
             font-weight: 400;
 
-            color: #dce4f5;
+            color: #dce4f4;
         }
+
 
         .research-card p {
+
             margin: 0;
 
             font-size: 13px;
-            line-height: 1.9;
 
-            color: #727e98;
-        }
-
-
-        /* =========================================================
-           Projects
-        ========================================================= */
-
-        .project {
-            display: grid;
-            grid-template-columns: 100px 1fr;
-
-            gap: 30px;
-
-            padding: 28px 0;
-
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .project-year {
-            font-size: 12px;
-            letter-spacing: 2px;
-
-            color: #66718b;
-        }
-
-        .project h3 {
-            margin: 0 0 10px;
-
-            font-size: 17px;
-            font-weight: 400;
-
-            color: #dce4f5;
-        }
-
-        .project p {
-            margin: 0;
-
-            font-size: 13px;
             line-height: 1.9;
 
             color: #737e97;
@@ -388,164 +498,415 @@
 
 
         /* =========================================================
-           Links
+           PROJECTS
+        ========================================================= */
+
+        .project {
+
+            display: grid;
+
+            grid-template-columns:
+                100px 1fr;
+
+            gap: 30px;
+
+            padding: 30px 0;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.055);
+        }
+
+
+        .project-year {
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            color: #65718a;
+        }
+
+
+        .project h3 {
+
+            margin:
+                0 0 10px;
+
+            font-size: 17px;
+
+            font-weight: 400;
+
+            color: #dce4f4;
+        }
+
+
+        .project p {
+
+            margin: 0;
+
+            font-size: 13px;
+
+            line-height: 1.9;
+
+            color: #737e97;
+        }
+
+
+        /* =========================================================
+           RESOURCES
+        ========================================================= */
+
+        .resources-intro {
+
+            max-width: 720px;
+
+            margin-bottom: 40px;
+
+            font-size: 14px;
+
+            line-height: 2;
+
+            color: #7b869f;
+        }
+
+
+        .resources-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .resource-card {
+
+            position: relative;
+
+            padding: 28px 30px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.065);
+
+            background:
+                rgba(255,255,255,0.018);
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+        .resource-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                rgba(190,210,250,0.22);
+        }
+
+
+        .resource-type {
+
+            margin-bottom: 18px;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            color: #5f6b84;
+        }
+
+
+        .resource-card h3 {
+
+            margin:
+                0 0 10px;
+
+            font-size: 16px;
+
+            font-weight: 400;
+
+            color: #dce4f4;
+        }
+
+
+        .resource-card p {
+
+            margin:
+                0 0 22px;
+
+            font-size: 13px;
+
+            line-height: 1.85;
+
+            color: #737e97;
+        }
+
+
+        .resource-link {
+
+            display: inline-block;
+
+            font-size: 11px;
+
+            letter-spacing: 1.5px;
+
+            color: #9aa8c3;
+
+            transition:
+                color 0.3s ease;
+        }
+
+
+        .resource-link:hover {
+
+            color: #ffffff;
+        }
+
+
+        /* =========================================================
+           LINKS
         ========================================================= */
 
         .links {
+
             display: flex;
+
             flex-wrap: wrap;
-            gap: 15px;
+
+            gap: 14px;
         }
+
 
         .link {
-            padding: 13px 22px;
 
-            border: 1px solid rgba(255,255,255,0.08);
+            padding:
+                13px 22px;
 
-            color: #a4afc7;
+            border:
+                1px solid
+                rgba(255,255,255,0.075);
 
-            font-size: 12px;
-            letter-spacing: 1px;
+            color: #9aa5bd;
 
-            transition: all 0.3s ease;
+            font-size: 11px;
+
+            letter-spacing: 1.5px;
+
+            transition:
+                all 0.3s ease;
         }
 
+
         .link:hover {
+
             color: #ffffff;
 
-            border-color: rgba(200,215,250,0.3);
+            border-color:
+                rgba(200,215,250,0.28);
 
-            background: rgba(255,255,255,0.04);
+            background:
+                rgba(255,255,255,0.035);
         }
 
 
         /* =========================================================
-           Footer
+           FOOTER
         ========================================================= */
 
         footer {
-            padding: 70px 20px;
+
+            padding:
+                75px 20px;
 
             text-align: center;
 
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top:
+                1px solid
+                rgba(255,255,255,0.045);
 
-            color: #505a72;
+            color: #4f5a72;
 
-            font-size: 11px;
-            letter-spacing: 2px;
+            font-size: 10px;
+
+            letter-spacing: 3px;
         }
 
+
         footer .star {
+
             margin-bottom: 18px;
 
-            color: #8996b1;
             font-size: 15px;
+
+            color: #8290ac;
         }
 
 
         /* =========================================================
-           动画
+           ANIMATION
         ========================================================= */
 
         @keyframes pulse {
 
             0%, 100% {
-                opacity: 0.45;
-                transform: scale(1);
+
+                opacity: 0.4;
+
+                transform:
+                    scale(1);
             }
 
             50% {
-                opacity: 1;
-                transform: scale(1.12);
-            }
 
+                opacity: 1;
+
+                transform:
+                    scale(1.1);
+            }
         }
+
 
         @keyframes float {
 
             0%, 100% {
-                transform: translateY(0);
+
+                transform:
+                    translateY(0);
             }
 
             50% {
-                transform: translateY(-7px);
-            }
 
+                transform:
+                    translateY(-7px);
+            }
         }
 
 
         /* =========================================================
-           手机端
+           MOBILE
         ========================================================= */
 
-        @media (max-width: 650px) {
+        @media (max-width: 700px) {
 
             nav {
-                padding: 18px 5vw;
+
+                padding:
+                    18px 5vw;
             }
+
 
             .nav-links {
+
                 gap: 12px;
-                font-size: 10px;
+
+                font-size: 9px;
             }
 
+
             .hero h1 {
+
                 letter-spacing: 4px;
             }
 
+
             .hero-subtitle {
+
                 letter-spacing: 3px;
             }
 
-            .research-grid {
+
+            .research-grid,
+            .resources-grid {
+
                 grid-template-columns: 1fr;
             }
 
+
             .project {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
+
                 gap: 10px;
             }
 
+
             section {
-                padding: 90px 0;
+
+                padding:
+                    90px 0;
             }
 
         }
 
     </style>
+
 </head>
 
 
 <body>
 
-    <!-- 星空 -->
+
+    <!-- =========================================================
+         STARFIELD
+    ========================================================== -->
+
     <canvas id="stars"></canvas>
+
     <div class="nebula"></div>
 
 
-    <!-- 导航 -->
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
     <nav>
 
         <div class="nav-logo">
             W · S
         </div>
 
+
         <div class="nav-links">
-            <a href="#about">ABOUT</a>
-            <a href="#research">RESEARCH</a>
-            <a href="#projects">PROJECTS</a>
-            <a href="#links">LINKS</a>
+
+            <a href="#about">
+                ABOUT
+            </a>
+
+            <a href="#research">
+                RESEARCH
+            </a>
+
+            <a href="#projects">
+                PROJECTS
+            </a>
+
+            <a href="#resources">
+                RESOURCES
+            </a>
+
+            <a href="#links">
+                LINKS
+            </a>
+
         </div>
 
     </nav>
 
 
     <!-- =========================================================
-         Hero
+         HERO
     ========================================================== -->
 
     <main>
+
 
         <div class="hero">
 
@@ -553,26 +914,39 @@
                 ✦
             </div>
 
+
             <h1>
                 Winter Starlight
             </h1>
+
 
             <div class="hero-subtitle">
                 PHYSICS · ASTROPHYSICS
             </div>
 
+
             <div class="hero-line"></div>
 
+
             <div class="hero-path">
+
                 SYSU
+
                 <span>→</span>
+
                 THU
+
             </div>
 
+
             <div class="hero-note">
+
                 Looking up at the stars,<br>
+
                 and trying to understand what lies beyond them.
+
             </div>
+
 
             <div class="scroll-hint">
                 SCROLL ↓
@@ -581,11 +955,13 @@
         </div>
 
 
+
         <!-- =====================================================
-             About
+             ABOUT
         ====================================================== -->
 
         <section id="about">
+
 
             <div class="section-title">
 
@@ -602,37 +978,62 @@
 
             <div class="about-text">
 
-                <p>
-                    Hi, I'm <strong>Winter Starlight</strong>.
-                </p>
 
                 <p>
-                    I studied Physics and Astronomy at
-                    <strong>Sun Yat-sen University</strong>,
+                    Hi, I'm
+                    <strong>
+                        Winter Starlight
+                    </strong>.
+                </p>
+
+
+                <p>
+
+                    I studied
+                    <strong>
+                        Physics and Astronomy
+                    </strong>
+                    at
+                    <strong>
+                        Sun Yat-sen University
+                    </strong>,
                     and will continue my journey in
-                    <strong>Astrophysics at Tsinghua University</strong>.
+                    <strong>
+                        Astrophysics at Tsinghua University
+                    </strong>.
+
                 </p>
 
+
                 <p>
-                    I am interested in the universe,
-                    galaxies, stars, and the physical processes
-                    that shape the cosmos.
+
+                    I am interested in understanding
+                    the universe through physics,
+                    computation, and observation.
+
                 </p>
+
 
                 <div class="quote">
-                    "Somewhere, something incredible is waiting to be known."
+
+                    "Somewhere, something incredible
+                    is waiting to be known."
+
                 </div>
+
 
             </div>
 
         </section>
 
 
+
         <!-- =====================================================
-             Research
+             RESEARCH
         ====================================================== -->
 
         <section id="research">
+
 
             <div class="section-title">
 
@@ -649,6 +1050,7 @@
 
             <div class="research-grid">
 
+
                 <div class="research-card">
 
                     <h3>
@@ -656,67 +1058,82 @@
                     </h3>
 
                     <p>
-                        Exploring the physical processes
-                        governing stars, galaxies and
-                        large-scale structures.
+
+                        Exploring physical processes
+                        that shape stars, galaxies,
+                        and the universe.
+
                     </p>
 
                 </div>
+
 
 
                 <div class="research-card">
 
                     <h3>
-                        Galaxy Formation
+                        Galaxy Formation & Evolution
                     </h3>
 
                     <p>
-                        Understanding how galaxies form,
-                        evolve and interact with their
-                        surrounding environments.
+
+                        Understanding how galaxies
+                        form, evolve, and interact
+                        with their environments.
+
                     </p>
 
                 </div>
+
 
 
                 <div class="research-card">
 
                     <h3>
-                        Computational Physics
+                        Computational Astrophysics
                     </h3>
 
                     <p>
-                        Using numerical simulations and
-                        computational methods to study
-                        astrophysical systems.
+
+                        Using numerical simulations
+                        and computational methods to
+                        explore astrophysical systems.
+
                     </p>
 
                 </div>
+
 
 
                 <div class="research-card">
 
                     <h3>
-                        To Be Explored
+                        Large-scale Structure
                     </h3>
 
                     <p>
-                        There is still a vast universe
-                        waiting to be understood.
+
+                        Exploring the distribution
+                        and evolution of matter
+                        on cosmic scales.
+
                     </p>
 
                 </div>
+
 
             </div>
 
         </section>
 
 
+
         <!-- =====================================================
-             Projects
+             PROJECTS
         ====================================================== -->
 
         <section id="projects">
+
 
             <div class="section-title">
 
@@ -731,11 +1148,14 @@
             </div>
 
 
+
             <div class="project">
+
 
                 <div class="project-year">
                     2026
                 </div>
+
 
                 <div>
 
@@ -744,19 +1164,26 @@
                     </h3>
 
                     <p>
-                        Starting a new chapter in astrophysics.
+
+                        Beginning a new chapter
+                        in astrophysics.
+
                     </p>
 
                 </div>
 
+
             </div>
+
 
 
             <div class="project">
 
+
                 <div class="project-year">
                     2025
                 </div>
+
 
                 <div>
 
@@ -765,48 +1192,244 @@
                     </h3>
 
                     <p>
-                        Research experience during undergraduate study.
+
+                        Research and exploration
+                        during undergraduate study.
+
                     </p>
 
                 </div>
 
+
             </div>
 
 
+
             <div class="project">
+
 
                 <div class="project-year">
                     2024
                 </div>
 
+
                 <div>
 
                     <h3>
-                        Numerical Modeling
+                        Physics & Astronomy
                     </h3>
 
                     <p>
-                        Exploring computational methods
-                        in physics and astronomy.
+
+                        Coursework, computational
+                        experiments, and exploration
+                        across physics and astronomy.
+
                     </p>
 
                 </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             RESOURCES
+        ====================================================== -->
+
+        <section id="resources">
+
+
+            <div class="section-title">
+
+                <div class="section-number">
+                    04
+                </div>
+
+                <h2>
+                    Resources
+                </h2>
+
+            </div>
+
+
+            <div class="resources-intro">
+
+                A small collection of notes,
+                templates, code, and materials
+                that I am happy to share publicly.
+
+            </div>
+
+
+
+            <div class="resources-grid">
+
+
+                <!-- RESOURCE 01 -->
+
+                <div class="resource-card">
+
+
+                    <div class="resource-type">
+                        NOTES
+                    </div>
+
+
+                    <h3>
+                        Physics & Astronomy Notes
+                    </h3>
+
+
+                    <p>
+
+                        Personal notes and summaries
+                        from physics and astronomy
+                        courses.
+
+                    </p>
+
+
+                    <a
+                        class="resource-link"
+                        href="#"
+                    >
+                        VIEW MATERIALS →
+                    </a>
+
+
+                </div>
+
+
+
+                <!-- RESOURCE 02 -->
+
+                <div class="resource-card">
+
+
+                    <div class="resource-type">
+                        LATEX
+                    </div>
+
+
+                    <h3>
+                        LaTeX Templates
+                    </h3>
+
+
+                    <p>
+
+                        Templates for reports,
+                        presentations, notes,
+                        and other academic work.
+
+                    </p>
+
+
+                    <a
+                        class="resource-link"
+                        href="#"
+                    >
+                        VIEW MATERIALS →
+                    </a>
+
+
+                </div>
+
+
+
+                <!-- RESOURCE 03 -->
+
+                <div class="resource-card">
+
+
+                    <div class="resource-type">
+                        CODE
+                    </div>
+
+
+                    <h3>
+                        Computational Projects
+                    </h3>
+
+
+                    <p>
+
+                        Small programs, simulations,
+                        numerical experiments,
+                        and useful scripts.
+
+                    </p>
+
+
+                    <a
+                        class="resource-link"
+                        href="#"
+                    >
+                        VIEW MATERIALS →
+                    </a>
+
+
+                </div>
+
+
+
+                <!-- RESOURCE 04 -->
+
+                <div class="resource-card">
+
+
+                    <div class="resource-type">
+                        READING
+                    </div>
+
+
+                    <h3>
+                        Reading Notes
+                    </h3>
+
+
+                    <p>
+
+                        Notes and thoughts from
+                        books, papers, and things
+                        worth remembering.
+
+                    </p>
+
+
+                    <a
+                        class="resource-link"
+                        href="#"
+                    >
+                        VIEW MATERIALS →
+                    </a>
+
+
+                </div>
+
 
             </div>
 
         </section>
 
 
+
         <!-- =====================================================
-             Links
+             LINKS
         ====================================================== -->
 
         <section id="links">
 
+
             <div class="section-title">
 
                 <div class="section-number">
-                    04
+                    05
                 </div>
 
                 <h2>
@@ -818,6 +1441,7 @@
 
             <div class="links">
 
+
                 <a
                     class="link"
                     href="https://github.com/"
@@ -826,6 +1450,7 @@
                     GitHub
                 </a>
 
+
                 <a
                     class="link"
                     href="mailto:your-email@example.com"
@@ -833,14 +1458,19 @@
                     Email
                 </a>
 
+
             </div>
 
         </section>
 
+
     </main>
 
 
-    <!-- Footer -->
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
 
     <footer>
 
@@ -848,32 +1478,52 @@
             ✦
         </div>
 
+
         WINTER STARLIGHT · 2026
 
     </footer>
 
 
+
     <!-- =========================================================
-         星空 JavaScript
+         STARFIELD JAVASCRIPT
     ========================================================== -->
 
     <script>
 
-        const canvas = document.getElementById("stars");
-        const ctx = canvas.getContext("2d");
+
+        const canvas =
+            document.getElementById("stars");
+
+
+        const ctx =
+            canvas.getContext("2d");
+
 
         let width;
         let height;
 
         let stars = [];
 
-        const STAR_COUNT = 180;
+
+        /*
+         * 大部分星星比较暗，
+         * 少数星星比较亮。
+         */
+
+        const STAR_COUNT = 155;
 
 
         function resize() {
 
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
+            width =
+                canvas.width =
+                window.innerWidth;
+
+            height =
+                canvas.height =
+                window.innerHeight;
+
 
             createStars();
 
@@ -884,25 +1534,51 @@
 
             stars = [];
 
-            for (let i = 0; i < STAR_COUNT; i++) {
+
+            for (
+                let i = 0;
+                i < STAR_COUNT;
+                i++
+            ) {
+
+
+                const bright =
+                    Math.random() < 0.08;
+
 
                 stars.push({
 
-                    x: Math.random() * width,
+                    x:
+                        Math.random() * width,
 
-                    y: Math.random() * height,
+                    y:
+                        Math.random() * height,
 
                     radius:
-                        Math.random() * 1.2 + 0.2,
+
+                        bright
+
+                        ? Math.random() * 1.2 + 0.6
+
+                        : Math.random() * 0.8 + 0.15,
 
                     alpha:
-                        Math.random() * 0.65 + 0.15,
+
+                        bright
+
+                        ? Math.random() * 0.45 + 0.45
+
+                        : Math.random() * 0.35 + 0.08,
 
                     speed:
-                        Math.random() * 0.008 + 0.002,
+
+                        Math.random() * 0.006 + 0.0015,
 
                     phase:
-                        Math.random() * Math.PI * 2
+
+                        Math.random() *
+                        Math.PI *
+                        2
 
                 });
 
@@ -912,6 +1588,7 @@
 
 
         function draw(time) {
+
 
             ctx.clearRect(
                 0,
@@ -923,29 +1600,48 @@
 
             stars.forEach(star => {
 
+
                 const alpha =
+
                     star.alpha +
+
                     Math.sin(
-                        time * star.speed +
+                        time *
+                        star.speed +
                         star.phase
-                    ) * 0.18;
+                    ) * 0.12;
 
 
                 ctx.beginPath();
 
+
                 ctx.arc(
+
                     star.x,
+
                     star.y,
+
                     star.radius,
+
                     0,
+
                     Math.PI * 2
+
                 );
 
 
                 ctx.fillStyle =
-                    `rgba(220,230,255,${Math.max(0, alpha)})`;
+
+                    `rgba(
+                        220,
+                        230,
+                        255,
+                        ${Math.max(0, alpha)}
+                    )`;
+
 
                 ctx.fill();
+
 
             });
 
@@ -963,10 +1659,14 @@
 
         resize();
 
+
         requestAnimationFrame(draw);
+
 
     </script>
 
+
 </body>
+
 </html>
 ```
