@@ -571,49 +571,45 @@
         }
 
 
-        .resources-grid {
+        .resources-list {
 
-            display: grid;
+            display: flex;
 
-            grid-template-columns:
-                repeat(2, 1fr);
+            flex-direction: column;
 
-            gap: 18px;
+            gap: 0;
         }
 
 
-        .resource-card {
+        .resource-item {
 
-            position: relative;
+            display: grid;
 
-            padding: 28px 30px;
+            grid-template-columns: 120px 1fr auto;
 
-            border:
+            gap: 30px;
+
+            align-items: center;
+
+            padding: 28px 0;
+
+            border-bottom:
                 1px solid
-                rgba(255,255,255,0.065);
-
-            background:
-                rgba(255,255,255,0.018);
+                rgba(255,255,255,0.055);
 
             transition:
-                transform 0.3s ease,
                 border-color 0.3s ease;
         }
 
 
-        .resource-card:hover {
-
-            transform:
-                translateY(-4px);
+        .resource-item:hover {
 
             border-color:
-                rgba(190,210,250,0.22);
+                rgba(190,210,250,0.18);
         }
 
 
         .resource-type {
-
-            margin-bottom: 18px;
 
             font-size: 9px;
 
@@ -623,10 +619,10 @@
         }
 
 
-        .resource-card h3 {
+        .resource-item h3 {
 
             margin:
-                0 0 10px;
+                0 0 8px;
 
             font-size: 16px;
 
@@ -636,10 +632,9 @@
         }
 
 
-        .resource-card p {
+        .resource-item p {
 
-            margin:
-                0 0 22px;
+            margin: 0;
 
             font-size: 13px;
 
@@ -678,29 +673,45 @@
 
             display: flex;
 
+            align-items: center;
+
             flex-wrap: wrap;
 
-            gap: 14px;
+            gap: 12px;
         }
 
 
         .link {
 
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
             padding:
-                13px 22px;
+                11px 16px;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.075);
-
-            color: #9aa5bd;
-
+            border: 1px solid rgba(255,255,255,0.075);
+            color: #8d99b2;
+            
             font-size: 11px;
 
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
+
+            text-decoration: none;
 
             transition:
                 all 0.3s ease;
+        }
+
+        .link svg {
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+
+            fill: currentColor;
+
+            transition: transform 0.3s ease,
+                        color 0.3s ease;
         }
 
 
@@ -713,6 +724,10 @@
 
             background:
                 rgba(255,255,255,0.035);
+        }
+
+        .link:hover svg {
+            transform: translateY(-1px);
         }
 
 
@@ -820,12 +835,12 @@
 
                 letter-spacing: 3px;
             }
-
-
-            .research-grid,
-            .resources-grid {
+            
+            .resource-item {
 
                 grid-template-columns: 1fr;
+
+                gap: 10px;
             }
 
 
@@ -999,7 +1014,7 @@
                     </strong>,
                     and will continue my journey in
                     <strong>
-                        astrophysics at the Department of Physics, Tsinghua University.
+                        astrophysics at the Department of Physics, Tsinghua University
                     </strong>.
 
                 </p>
@@ -1152,19 +1167,19 @@
 
 
                 <div class="project-year">
-                    None
+                    Waiting...
                 </div>
 
 
                 <div>
 
                     <h3>
-                        None
+                        Waiting...
                     </h3>
 
                     <p>
 
-                        None
+                        Waiting...
 
                     </p>
 
@@ -1207,38 +1222,41 @@
 
 
 
-            <div class="resources-grid">
+            <div class="resources-list">
 
 
                 <!-- RESOURCE 01 -->
 
-                <div class="resource-card">
-
+                <div class="resource-item">
 
                     <div class="resource-type">
-                        NOTES
+                        PHYSICS
                     </div>
 
+                    <div>
 
-                    <h3>
-                        Physics & Astronomy Notes
-                    </h3>
+                        <h3>
+                            Physics Experiments I
+                        </h3>
 
 
-                    <p>
+                        <p>
 
-                        Personal notes and summaries
-                        from physics and astronomy
-                        courses.
+                            SYSU · Physics Laboratory
+                            <br>
+                            Experimental reports and related materials.
 
-                    </p>
+                        </p>
 
+                    </div>
 
                     <a
                         class="resource-link"
-                        href="#"
+                        href="https://github.com/winterstarlight/SYSU-Physics-Experiments-I"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        VIEW MATERIALS →
+                        VIEW →
                     </a>
 
 
@@ -1248,34 +1266,36 @@
 
                 <!-- RESOURCE 02 -->
 
-                <div class="resource-card">
+                <div class="resource-item">
 
 
                     <div class="resource-type">
                         LATEX
                     </div>
 
+                    <div>
 
-                    <h3>
-                        LaTeX Templates
-                    </h3>
+                        <h3>
+                            LaTeX Templates
+                        </h3>
 
 
-                    <p>
+                        <p>
 
-                        Templates for reports,
-                        presentations, notes,
-                        and other academic work.
+                            Templates for reports,
+                            presentations, notes,
+                            and other academic work.
 
-                    </p>
-
+                        </p>
+                    </div>
 
                     <a
                         class="resource-link"
-                        href="https://github.com/winterstarlight/SYSU-Physics-Experiments.git"
-                        href="_blank"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        VIEW MATERIALS →
+                        VIEW →
                     </a>
 
 
@@ -1285,33 +1305,37 @@
 
                 <!-- RESOURCE 03 -->
 
-                <div class="resource-card">
+                <div class="resource-item">
 
 
                     <div class="resource-type">
                         CODE
                     </div>
 
+                    <div>
 
-                    <h3>
-                        Computational Projects
-                    </h3>
+                        <h3>
+                            Computational Projects
+                        </h3>
 
 
-                    <p>
+                        <p>
 
-                        Small programs, simulations,
-                        numerical experiments,
-                        and useful scripts.
+                            Small programs, simulations,
+                            numerical experiments,
+                            and useful scripts.
 
-                    </p>
+                        </p>
 
+                    </div>
 
                     <a
                         class="resource-link"
                         href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        VIEW MATERIALS →
+                        VIEW →
                     </a>
 
 
@@ -1321,33 +1345,37 @@
 
                 <!-- RESOURCE 04 -->
 
-                <div class="resource-card">
+                <div class="resource-item">
 
 
                     <div class="resource-type">
                         READING
                     </div>
 
+                    <div>
 
-                    <h3>
-                        Reading Notes
-                    </h3>
+                        <h3>
+                            Reading Notes
+                        </h3>
 
 
-                    <p>
+                        <p>
 
-                        Notes and thoughts from
-                        books, papers, and things
-                        worth remembering.
+                            Notes and thoughts from
+                            books, papers, and things
+                            worth remembering.
 
-                    </p>
+                        </p>
 
+                    </div>
 
                     <a
                         class="resource-link"
                         href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        VIEW MATERIALS →
+                        VIEW →
                     </a>
 
 
@@ -1385,18 +1413,30 @@
 
                 <a
                     class="link"
-                    href="https://winterstarlight.github.io"
+                    href="https://github.com/winterstarlight"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
                 >
-                    GitHub:https://winterstarlight
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.865 8.166 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.342-3.369-1.342-.455-1.157-1.11-1.466-1.11-1.466-.908-.621.069-.608.069-.608 1.004.071 1.532 1.031 1.532 1.031.892 1.529 2.341 1.087 2.91.831.091-.647.35-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.844a9.5 9.5 0 0 1 2.504.337c1.909-1.294 2.748-1.025 2.748-1.025.546 1.378.203 2.397.1 2.65.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.001 10.001 0 0 0 22 12c0-5.523-4.477-10-10-10Z"/>
+                    </svg>
+
+                    <span>GitHub</span>
+
                 </a>
 
 
                 <a
                     class="link"
-                    href="xiaochw5@mail2.sysu.edu.cn"
+                    href="mailto:xiaochw5@mail2.sysu.edu.cn"
+                    aria-label="Email"
                 >
-                    Email:xiaochw5@mail2.sysu.edu.cn
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.5l9 6 9-6V7H3Zm18 10V9.9l-8.45 5.63a1 1 0 0 1-1.1 0L3 9.9V17h18Z"/>
+                    </svg>
+
+                    <span>Email</span>
                 </a>
 
 
