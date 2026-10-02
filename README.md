@@ -1,2 +1,2 @@
 # Welcome to my personal homepage.
-[Click to enter](https://github.com/winterstarlight.github.io)
+[Click to enter](https://winterstarlight.github.io/)
